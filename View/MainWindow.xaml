@@ -19,9 +19,13 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content ="Settings" FontSize="20" BorderThickness="5" BorderBrush="#70000000" Margin="90,45,90,45"/>
-            <Button Grid.Column="1" Content ="Play Now" FontSize="30" BorderThickness="5" BorderBrush="#70000000" Margin="75,35,75,35"/>
-            <ComboBox Grid.Column="2" FontSize="20" BorderThickness="5" BorderBrush="#000000" Margin="90,45,90,45" />
+            <Button Grid.Column="0" Content ="Settings" FontSize="20" FontWeight="Bold" BorderThickness="5" BorderBrush="#70000000" Margin="90,45,90,45"/>
+            <Button Grid.Column="1" Content ="Play Now" FontSize="30" FontWeight="Bold" BorderThickness="5" BorderBrush="#70000000" Margin="75,35,75,35"/>
+            <ComboBox Grid.Column="2" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="5" BorderBrush="#000000" Margin="90,45,90,45">
+                <ComboBoxItem Content="1.0.0"></ComboBoxItem>
+                <ComboBoxItem Content="1.0.1"></ComboBoxItem>
+                <ComboBoxItem Content="2.0.0"></ComboBoxItem>
+            </ComboBox>
         </Grid>
     </Grid>
 </Window>
