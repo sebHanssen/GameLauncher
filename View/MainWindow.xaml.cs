@@ -15,14 +15,17 @@ using System.Windows.Shapes;
 
 namespace GameLauncher
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            VideoPlayer.Position = TimeSpan.FromMilliseconds(5000);
+        }
+        
+        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            VideoPlayer.Position = TimeSpan.FromMilliseconds(1);
         }
     }
 }

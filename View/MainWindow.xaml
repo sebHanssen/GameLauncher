@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameLauncher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" AllowsTransparency="True">
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*" />
@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <MediaElement Source="/Resources/Jhin.mp4" 
-                      Name="VideoPlayer" Stretch="UniformToFill" Volume="0.1" Grid.RowSpan="2" />
+        <MediaElement Source="Resources/Jhin.mp4" MediaEnded="MediaElement_MediaEnded" LoadedBehavior="Play"
+                      x:Name="VideoPlayer" Stretch="UniformToFill" Volume="0.1" Grid.RowSpan="2" IsMuted="True"/>
     </Grid>
 </Window>
