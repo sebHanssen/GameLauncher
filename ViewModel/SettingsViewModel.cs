@@ -18,6 +18,9 @@ namespace GameLauncher.ViewModel
         private bool mute;
 
         [ObservableProperty]
+        private bool autoUpdate;
+
+        [ObservableProperty]
         private string? volumetext;
 
         partial void OnVolumeChanged(int value)
@@ -35,10 +38,16 @@ namespace GameLauncher.ViewModel
             App.events.OnToggleMute(value);
         }
 
+        partial void OnAutoUpdateChanged(bool value)
+        {
+            App.events.OnToggleUpdate(value);
+        }
+
         private void HandleSettingsClosed(object sender, EventArgs e)
         {
             App.settings.VolumeLevel = ((double)Volume)/100.0;
             App.settings.IsMuted = Mute;
+            App.settings.IsAutoUpdate= AutoUpdate;
             System.IO.File.WriteAllText(@"data.json", JsonConvert.SerializeObject(App.settings, Formatting.Indented));
         }
 
@@ -49,6 +58,7 @@ namespace GameLauncher.ViewModel
             {
                 Volume = (int)(App.settings.VolumeLevel*100);
                 Mute = App.settings.IsMuted;
+                AutoUpdate = App.settings.IsAutoUpdate;
                 Volumetext = Volume.ToString() + "%";
             }
         }

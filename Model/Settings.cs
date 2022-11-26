@@ -7,6 +7,9 @@ namespace GameLauncher.Model
     {
         public double VolumeLevel { get; set; }
         public bool IsMuted { get; set; }
+        public bool IsAutoUpdate { get; set; }
+
+        public string? SelectedVersion { get; set; }
 
         public Settings()
         {
@@ -22,8 +25,10 @@ namespace GameLauncher.Model
 
         private void SetDefaults()
         {
-            VolumeLevel = 0.1;
+            VolumeLevel = 0.25;
             IsMuted = false;
+            IsAutoUpdate = true;
+            SelectedVersion = "1.0.0";
         }
     }
     

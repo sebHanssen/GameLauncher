@@ -18,8 +18,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" Text="Mute Audio" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0,0,0,80"></TextBlock>
-        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Mute}"></CheckBox>
+        <TextBlock Grid.Column="1" Text="Mute Audio" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" Margin="0,0,0,80"></TextBlock>
+        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Mute}" Margin="0,0,150,0"></CheckBox>
+        <TextBlock Grid.Column="1" Text="Auto Update" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold" Margin="0,0,0,80"></TextBlock>
+        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding AutoUpdate}" Margin="150,0,0,0"></CheckBox>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="Volume" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0,0,0,80"></TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Volumetext}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
         <Slider Grid.Column="1" Grid.Row="1" Maximum="100" Value="{Binding Volume}" VerticalAlignment="Center" Margin="0,80,0,0"></Slider>

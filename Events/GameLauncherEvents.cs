@@ -17,6 +17,7 @@ namespace GameLauncher.Events
             ChangeVolume?.Invoke(this, new ChangeVolumeEventArgs { Volume = volume });
         }
 
+
         public delegate void ToggleMuteEventHandler(object sender, ToggleMuteEventArgs e);
 
         public event ToggleMuteEventHandler? ToggleMute;
@@ -26,13 +27,34 @@ namespace GameLauncher.Events
             ToggleMute?.Invoke(this, new ToggleMuteEventArgs { IsMuted = isMuted });
         }
 
-        public delegate void OnSettingsCloseEventHandler(object sender, EventArgs e);
 
-        public event OnSettingsCloseEventHandler? SettingsClosed;
+        public delegate void ToggleUpdateEventHandler(object sender, ToggleUpdateEventArgs e);
+
+        public event ToggleUpdateEventHandler? ToggleUpdate;
+
+        public virtual void OnToggleUpdate(bool isAutoUpdate)
+        {
+            ToggleUpdate?.Invoke(this, new ToggleUpdateEventArgs { IsAutoUpdate = isAutoUpdate });
+        }
+
+
+        public delegate void SettingsCloseEventHandler(object sender, EventArgs e);
+
+        public event SettingsCloseEventHandler? SettingsClosed;
 
         public virtual void OnSettingsClose()
         {
             SettingsClosed?.Invoke(this, EventArgs.Empty);
+        }
+
+
+        public delegate void ChangeVersionEventHandler(object sender, ChangeVersionEventArgs e);
+
+        public event ChangeVersionEventHandler? ChangeVersion;
+
+        public virtual void OnChangeVersion(string selectedVersion)
+        {
+            ChangeVersion?.Invoke(this, new ChangeVersionEventArgs { SelectedVersion = selectedVersion});
         }
     }
 }
