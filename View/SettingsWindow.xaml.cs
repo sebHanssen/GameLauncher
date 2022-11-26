@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GameLauncher.ViewModel;
+using Newtonsoft.Json.Linq;
 
 namespace GameLauncher.View
 {
@@ -21,12 +23,15 @@ namespace GameLauncher.View
     {
         public SettingsWindow()
         {
+            DataContext = new SettingsViewModel();
             InitializeComponent();
         }
 
         private void ExitClick(object sender, RoutedEventArgs e)
         {
             Visibility = Visibility.Hidden;
+            App.events.OnSettingsClose();
         }
+
     }
 }

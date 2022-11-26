@@ -1,4 +1,5 @@
 ﻿using GameLauncher.View;
+using GameLauncher.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace GameLauncher
         SettingsWindow settingsWindow = new SettingsWindow();
         public MainWindow()
         {
+            DataContext = new MainViewModel();
             InitializeComponent();
             VideoPlayer.Position = TimeSpan.FromMilliseconds(5000);
         }

@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using GameLauncher.Events;
+using GameLauncher.Model;
 
 namespace GameLauncher
 {
@@ -13,5 +15,8 @@ namespace GameLauncher
     /// </summary>
     public partial class App : Application
     {
+        public static Settings settings = new();
+
+        public static readonly GameLauncherEvents events = new();
     }
 }
