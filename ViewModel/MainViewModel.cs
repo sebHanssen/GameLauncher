@@ -13,12 +13,8 @@ using System.Printing;
 using CommunityToolkit.Mvvm.Input;
 using GameLauncher.Model;
 using GameLauncher.Events;
-using GameLauncher.View;
-using System.Windows;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Text.RegularExpressions;
-using System.Diagnostics;
+
 
 namespace GameLauncher.ViewModel
 {
@@ -89,6 +85,13 @@ namespace GameLauncher.ViewModel
         private void HandleUpdateChanged(object sender, ToggleUpdateEventArgs e)
         {
             IsAutoUpdate = e.IsAutoUpdate;
+            if (IsAutoUpdate)
+            {
+                string[] VersionList;
+                var versionFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Versions");
+                VersionList = Directory.GetFiles(versionFolderPath, "*", SearchOption.AllDirectories).Select(x => Path.GetFileNameWithoutExtension(x)).ToArray();
+                SelectedVersion = FindLatestVersion(VersionList);
+            }
         }
 
         private void HandleVersionChanged(object sender, ChangeVersionEventArgs e)
