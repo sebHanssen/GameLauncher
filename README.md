@@ -21,7 +21,7 @@ I also decided to include these optional points:
 Before I started writing anything, I decided to make a plan. I made a sketch of the design,
 and planned out the basic functionality I wanted in my project.
 
-This is what I ended up with  
+This is what I ended up with:  
 ![Sketch of Game Launcher](Resources/Sketch.png "Sketch")
 
 Visualizing the way I want it to turn out first, makes it easier to code afterwards.
@@ -76,6 +76,11 @@ Currently the function will look at version 2.0.0 and 1.9.9 and turn them into t
 2.0.0 should is still newer than 1.0.10, but the number 200 is smaller than 1010.
 
 For further development, I would try to make the earlier numbers be more significant to prevent this issue from arising.
+
+### Actually launching games
+Currently the application only launches a .txt file with individual content to simulate launching a game.
+
+For further development, I would make it launch an actual .exe file for different versions of a test game.
 
 ### Local folders replaced with a database
 Currently the project has a Versions and Resources folder dedicated to the different "versions" and their resources.
