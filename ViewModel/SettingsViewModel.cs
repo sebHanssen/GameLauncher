@@ -25,11 +25,18 @@ namespace GameLauncher.ViewModel
 
         partial void OnVolumeChanged(int value)
         {
-            double doublevolume = (double)volume / 100;
+            if(value < 0)
+            {
+                Volume = 0;
+            }
+            if (value > 100)
+            {
+                Volume = 100;
+            }
+
+            double doublevolume = (double)Volume / 100;
             App.events.OnVolumeChanged(doublevolume);
-
-            Volumetext = value.ToString() + "%";
-
+            Volumetext = Volume.ToString() + "%";
             App.events.SettingsClosed += HandleSettingsClosed;
         }
 

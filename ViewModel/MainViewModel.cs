@@ -101,7 +101,7 @@ namespace GameLauncher.ViewModel
             File.WriteAllText(@"data.json", JsonConvert.SerializeObject(App.settings, Formatting.Indented));
         }
 
-        private string FindLatestVersion(string[] versionList)
+        public string FindLatestVersion(string[] versionList)
         {
             
             int val = 0;
