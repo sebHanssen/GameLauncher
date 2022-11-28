@@ -24,7 +24,7 @@ namespace GameLauncher
     {
         SettingsWindow settingsWindow = new SettingsWindow();
         
-        
+     
 
         public MainWindow()
         {

@@ -93,7 +93,7 @@ If the user chooses a different version, it will download/update the current ver
 ### Safety checks
 There aren't enough tests and checks in this project.  
 
-For further development, I would create more checks that would prevent these kind of situations:
+For further development, I would create more checks that would prevent these kinds of situations:
 
 - Trying to launch the game without having a version selected
 - Errors if application can't find version(s) or resources for the selected version
